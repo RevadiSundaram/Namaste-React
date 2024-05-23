@@ -10,12 +10,23 @@ const heading = React.createElement("h1", {id: "Heading"}, "Episode 3 - Laying t
 
 // JSX heading - html-like or xml-like syntax
 
-const jsxheading = (
+const Title = ()=> (
 <h1 className="head">
     Namaste React using JSX
 </h1>
 );
 
-console.log(jsxheading);
+
+// React Functional Component
+const HeadingComponent = () =>(
+    <div>
+        <Title />
+        <h1 className="heading">Namaste React Functional Component</h1>
+    </div>
+    
+);
+
+const HeadingComponent2 = () => <h1 className="heading">Namaste React Functional Component</h1>;
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(jsxheading); 
+root.render(<HeadingComponent />); 

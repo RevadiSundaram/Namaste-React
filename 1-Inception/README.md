@@ -1,15 +1,55 @@
-# Namaste-React
-# Episode - 1 Inception
+# Basic hello world program in vscode - html:5
 
-# What is Emmet?
-It is a set of plug-ins for converting Acryonyms into block of structured code
+# Using Javascript to build Hello World 
 
-# Difference between Library and Framework?
-Framework is a set of pre-written code that provides a structure for developing software applications
-Library is a collection of pre-written code that can be used to perform specifc tasks
+    <div id="root"></div>
+    <script>
+        const heading = document.createElement("h1");
+        heading.innerHTML = "Hello World from JavaScript!";
 
-# What is CDN? Why do we use it?
-CDN - Content Delivery Network
-It allows for a quick transfer of assests needed for loading internet content, including HTML pages, JS files, stylesheet, images and videos.
+        const root = document.getElementById("root");
+        root.appendChild(heading);
+    </script>
 
-# Why is React known as React?
+- Browser do not know React
+- So get React into our project
+- By adding cdn into our project, we can code React
+
+# What is a React?
+- React is a Javascript Library
+
+# Who wrote React code?
+- Developed by Facebook Developers
+
+# Ways to add React into our project
+- CDN
+
+# DOM Manipulation
+- Removing and adding nodes is costly, thats why we are using React (to write everything in js)
+
+# Giving attributes to the tab
+const heading = React.createElement("h1", 
+{
+    id: "heading",
+    xyz: "abc"
+}, 
+"Hello World from React!");
+
+<h1 id="heading" xyz="abc">Hello World from React!</h1>
+
+
+# ReactElement gives Object => HTML (Browser understands)
+
+React.createElement("div", //tag
+{id="parent"}, //attributes
+"I am a div tag") //content
+
+- if we want to pass one more tag, then pass as an array in the third argument.
+
+# Order
+Keep React before your App.js 
+
+- If there are some tags inside the root div tag in index.html, that tags will be replaced by the things which we are passing from our render method
+- React will only work in root id
+- React can work in existing applications
+- React can work in the small portions of the page (by giving cdn links)

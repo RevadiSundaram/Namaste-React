@@ -5,6 +5,9 @@
 - While executing, we can give => "npm run start"
 - We can also give npm start (will only work for start, not build)
 
+# root.render
+- Will convert everything into html and render it
+
 # React Elements
 - React.createElement ==> Object ==> (Rendering) ==> HTML Element
 - While rendering it will replace whatever inside root element (html) with the element that we are giving in JS
@@ -31,7 +34,32 @@ JSX - HTML-like or XML-like Java Script Syntax
 - tabindex ==> tabIndex
 - Wrap multiple lines in round brackets ()
 
+# React Components
+- Everything in react is a component
+- Two types
+- Class based Components - OLD
+- Functional Components - NEW
 
+# Functional Components
+- It is nothing but it returns a JSX
+- A JS function which returns a React Element
+- Starts with Capital letter
+- To render a component, wrap it in <FunctionName />
+
+# Component Composition
+- A component inside a component
+
+const Title = ()=> (
+<h1 className="head">
+    Namaste React using JSX
+</h1>
+);
+const HeadingComponent = () =>(
+    <div>
+        <Title />
+        <h1 className="heading">Namaste React Functional Component</h1>
+    </div>  
+);
 
 
 
