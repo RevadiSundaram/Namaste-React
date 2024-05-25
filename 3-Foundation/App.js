@@ -10,9 +10,9 @@ const heading = React.createElement("h1", {id: "Heading"}, "Episode 3 - Laying t
 
 // JSX heading - html-like or xml-like syntax
 
-const Title = ()=> (
+const title =  (
 <h1 className="head">
-    Namaste React using JSX
+    Namaste React using JSX from Title
 </h1>
 );
 
@@ -20,7 +20,8 @@ const Title = ()=> (
 // React Functional Component
 const HeadingComponent = () =>(
     <div>
-        <Title />
+        <h2>{100+2000}</h2>
+        {title}
         <h1 className="heading">Namaste React Functional Component</h1>
     </div>
     

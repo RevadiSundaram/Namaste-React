@@ -49,6 +49,7 @@ React.createElement("div", //tag
 # Order
 Keep React before your App.js 
 
+# About React
 - If there are some tags inside the root div tag in index.html, that tags will be replaced by the things which we are passing from our render method
 - React will only work in root id
 - React can work in existing applications

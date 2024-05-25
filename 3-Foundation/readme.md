@@ -21,6 +21,9 @@ JSX - HTML-like or XML-like Java Script Syntax
 - This is not pure JS
 - JSX code is transpiled (converted which browser understands) before it reaches JS engine
 - Parcel is transpiling the code (managing) => Babel does it
+- We can write any JS element inside JSX using curly brackets {}
+- Prevents cross site scripting attacks
+- JSX is making our code readable, not react
 
 # Babel
 - Babel is a package which is inside parcel
@@ -45,6 +48,8 @@ JSX - HTML-like or XML-like Java Script Syntax
 - A JS function which returns a React Element
 - Starts with Capital letter
 - To render a component, wrap it in <FunctionName />
+- <FunctionName /> ======== <FunctionName></FunctionName>
+- Can call it by {FunctionName()} also
 
 # Component Composition
 - A component inside a component
@@ -56,12 +61,15 @@ const Title = ()=> (
 );
 const HeadingComponent = () =>(
     <div>
-        <Title />
+        <Title /> or {Title()}
         <h1 className="heading">Namaste React Functional Component</h1>
     </div>  
 );
 
 
+# Cross Site Scripting Attack:
+- With api.getData() - mallicious data- attackers tries to catch it
+- JSX will take care of injection attacks
 
 Homwork:
 img, anchor, iframe, tabindex
