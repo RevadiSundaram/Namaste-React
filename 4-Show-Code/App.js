@@ -7,7 +7,9 @@ import ReactDOM from "react-dom/client";
 - Nav Items
 * Body
 - Search Input
-- * Restraurant Container 
+- * Restraurant Container
+        - Image
+        - Name of Res, Star rating, cuisine, delivery time
 - Res Card
 * Footer
 - Copyright
@@ -34,11 +36,49 @@ const Header = () =>{
         </div>
     )
 }
+const RestraurantCard = (props) =>{
+    const {resName, cuisine} = props;
+    return (
+        <div className="res-card" style={{backgroundColor: "#f0f0f0"}}>
+            <img 
+            className="res-logo"
+            alt="res-logo" 
+            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_366/e0vvulfbahjxjz6k4uwi" />
+            <h3>{resName}</h3>
+            <h4>{cuisine}</h4>
+            <h4>4.4</h4>
+            <h4>38 mins</h4>
+        </div>
+    )
+}
+
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">Search</div>
+            <div className="res-cont">
+                <RestraurantCard 
+                    resName="Meghana Foods" 
+                    cuisine="Briyani, North Indian, Asian"
+                     
+                />
+                <RestraurantCard 
+                    resName = "KFC" 
+                    cuisine="Burger, Fast Food" 
+                />
+                
+
+            </div>
+            
+        </div>
+    )
+}
 
 const AppLayout = () => {
     return(
         <div className="app">
             <Header />
+            <Body />
         </div>
     )
 }
