@@ -62,3 +62,11 @@ const RestraurantCard = ({resName, cuisine}) =>{
         <h3>{cuisine}</h3>
     )}
 "
+
+# Config Driven UI
+- Our website is driven by UI
+- Each location has diff UI (diff data)
+- Controlling our UI which has diff data (data from backend)
+
+# CDN 
+- Cloudinary Image Id is the CDN which swiggy uses

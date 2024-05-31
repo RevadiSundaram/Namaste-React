@@ -19,6 +19,78 @@ import ReactDOM from "react-dom/client";
 
 */
 
+const resObj = {
+          "id": "17297",
+          "name": "KFC",
+          "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/4/17/283329f9-5ad8-4c46-9177-6b23b6eb2966_17297.JPG",
+          "locality": "Jayanagar",
+          "areaName": "Jayanagar",
+          "costForTwo": "₹400 for two",
+          "cuisines": [
+            "Burgers",
+            "Fast Food",
+            "Rolls & Wraps"
+          ],
+          "avgRating": 4.1,
+          "parentId": "547",
+          "avgRatingString": "4.1",
+          "totalRatingsString": "10K+",
+          "sla": {
+            "deliveryTime": 29,
+            "lastMileTravel": 1.7,
+            "serviceability": "SERVICEABLE",
+            "slaString": "25-30 mins",
+            "lastMileTravelString": "1.7 km",
+            "iconType": "ICON_TYPE_EMPTY"
+          },
+          "availability": {
+            "nextCloseTime": "2024-05-29 23:00:00",
+            "opened": true
+          },
+          "badges": {
+            
+          },
+          "isOpen": true,
+          "aggregatedDiscountInfoV2": {
+            
+          },
+          "type": "F",
+          "badgesV2": {
+            "entityBadges": {
+              "imageBased": {
+                
+              },
+              "textBased": {
+                
+              },
+              "textExtendedBadges": {
+                
+              }
+            }
+          },
+          "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+              "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+              "lottie": {
+                
+              },
+              "video": {
+                
+              }
+            }
+          },
+          "reviewsSummary": {
+            
+          },
+          "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+          "restaurantOfferPresentationInfo": {
+            
+          }
+}
+
+
+
 const Header = () =>{
     return (
         <div className="header">
@@ -37,17 +109,18 @@ const Header = () =>{
     )
 }
 const RestraurantCard = (props) =>{
-    const {resName, cuisine} = props;
+    const {resData} = props;
     return (
         <div className="res-card" style={{backgroundColor: "#f0f0f0"}}>
             <img 
             className="res-logo"
             alt="res-logo" 
-            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_366/e0vvulfbahjxjz6k4uwi" />
-            <h3>{resName}</h3>
-            <h4>{cuisine}</h4>
-            <h4>4.4</h4>
-            <h4>38 mins</h4>
+            src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + resData.cloudinaryImageId} />
+            <h3>{resData.name}</h3>
+            <h4>{resData.cuisines.join(", ")}</h4>
+            <h4>{resData.avgRating} stars</h4>
+            <h4>{resData.sla.deliveryTime} minutes</h4>
+            <h4>{resData.costForTwo}</h4>
         </div>
     )
 }
@@ -58,14 +131,10 @@ const Body = () => {
             <div className="search">Search</div>
             <div className="res-cont">
                 <RestraurantCard 
-                    resName="Meghana Foods" 
-                    cuisine="Briyani, North Indian, Asian"
+                    resData = {resObj}
                      
                 />
-                <RestraurantCard 
-                    resName = "KFC" 
-                    cuisine="Burger, Fast Food" 
-                />
+                
                 
 
             </div>
