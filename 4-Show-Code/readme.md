@@ -21,14 +21,14 @@
 
 # Inline CSS in React
 
-"const styleRes = {
+`const styleRes = {
     backgroundColor: "black"
 }
 <div className="res-card" style={styleRes}></div>
 or
 <div className="res-card" style={{
     backgroundColor: "black"
-}}></div>"
+}}></div>`
 
 # Props
 - Shortform for Properties
@@ -70,3 +70,16 @@ const RestraurantCard = ({resName, cuisine}) =>{
 
 # CDN 
 - Cloudinary Image Id is the CDN which swiggy uses
+
+# Key
+- Always use keys while rendering
+- If we dont use keys, and suppose if new items came at the starting or in the middle, React will not know where the item came and it will rerender all the 15 items
+- React will not uniquickly identify elements
+- If we use keys, then react will know which id is present already and whichever added newly only will render, all the others will not rerender
+- It will improve performance
+
+# Index as Key
+- It is okay to use index as a key, it will work. But it is not recommended
+- Cannot use map's index also as a key
+- In React's official doc, it is written we dont recommend writing indexes as a key
+- unique id >>>>>>> can use index as a key >>>>>> not using keys
