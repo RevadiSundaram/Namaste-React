@@ -1982,7 +1982,7 @@ const RestaurantCard = (props) =>{
 const Body = () =>{
     return(
         <div className="body">
-            <h3>Top Restraurants in Bangalore</h3>
+            <h2>Top Restraurants in Bangalore</h2>
             <div className="res-list">
                 { resList.map((restaurant) =>(
                     <RestaurantCard 
