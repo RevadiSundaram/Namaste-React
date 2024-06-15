@@ -1,3 +1,12 @@
+# Installing and Running
+- npm init
+- npm install -D parcel
+- type="module" in App.js
+- "start": "parcel index.html" in script in package.json
+- npm install react
+- npm install react-dom
+- To start, npm start
+
 # Best Practice
 - Make separate files for separate components
 - extension .js == .jsx, its the same, it harly matters
