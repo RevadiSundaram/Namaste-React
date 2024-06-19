@@ -46,18 +46,21 @@ const Body = () => {
                         //Filter the restaurant cards and update UI
                         //searchText
                         console.log(searchText);
-                        const filterRes = listOfRestaurants.filter((res) => {
-                            res.info.name.toLowerCase().includes(searchText);
-                            
-                        });
+                        const filterRes = listOfRestaurants.filter((res) =>
+                        {  
+                           return res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                        }
+                        );
+
                         setFilteredRestaurants(filterRes);
                     }}
                     >Search</button>
                 </div>
                 <button className="filter-btn" 
                     onClick={() => {
-                    const filteredList = listOfRestaurants.filter(
-                        (res) => res.info.avgRating >= 4.5
+                    const filteredList = listOfRestaurants.filter((res) =>  {
+                         return res.info.avgRating >= 4.2;
+                        }
                     );
                     setListOfRestaurants(filteredList);
                     }}>
@@ -66,7 +69,7 @@ const Body = () => {
             </div>
             <div className="res-cont">
                 {
-                    filteredRestaurants.map((restaurant, index) => (
+                    filteredRestaurants.map((restaurant) => (
                     <RestaurantCard key={restaurant.info.id} resData = {restaurant} />
 
                 ))}
