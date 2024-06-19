@@ -49,3 +49,11 @@ Footer
 # Why do we need a useState Hook?
 - It lets you add a state variable to your component. 
 - The useState() hook can conveniently hold strings, arrays, numbers, objects and much more.
+
+# What is a Microservice?
+- microservice architecture - is an architectural style that structures an application as a collection of services that are:
+- Independently deployable
+- Loosely coupled
+- Services are typically organized around business capabilities. Each service is often owned by a single, small team.
+
+# What is Monolith architecture?

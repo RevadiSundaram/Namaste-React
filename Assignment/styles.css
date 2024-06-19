@@ -96,12 +96,46 @@ input{
     border: 1px solid black;
     border-radius: 5px;
 }
-button{
+.search-btn{
     font-family: inherit;
     padding: 10px 20px;
-    background-color: black;
+    background-color: #3d405b;
     color: white;
     border-radius: 5px;
     border: none;
     cursor: pointer;
+}
+.top-res{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.shimmer-ui{
+    display: flex;
+    gap: 50px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.cards{
+    width: 200px;
+    height: 250px;
+    background-color: white;
+    border-radius: 10px;
+}
+.topres-btn{
+    font-family: inherit;
+    background-color: #e9ecef;
+    color: #e76f51;
+    border: none;
+    cursor: pointer;
+}
+.nav-el button{
+    background-color: white;
+    border: none;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+
 }
