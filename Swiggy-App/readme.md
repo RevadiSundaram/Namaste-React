@@ -101,11 +101,22 @@ Microservices
 - Render Mechanism is very fast so it doesnt matter how many times we are rendering
 
 # UseEffect Hook
-
 useEffect(()=>{},[]);
 - First arg is a callback fun
 - 2nd arg is dependant array
 - When body component loads, it will render it and as soon as it renders it useEffect's callback function is called
+- UseEffect will be called whenever the components renders
+- Dependancy array changes the behaviour of the render
+- if no depandancy array => useeffect is called on every component render
+- if depandancy array is empty => useeffect is called on initial render and just once
+- if any depandancy => useeffect called only when the depandancy changes
+
+# UseState Hook
+- Never use state variable outside the component
+- It is used for creating local state variable inside the functional component
+- Never use inside if/else statement or for loop or function
+- Always use it as first thing in the component
+
 
 # CORS Policy
 - our browser(chrome) is not allowing from localhost (one origin) to another origin (swiggy api)
@@ -138,6 +149,76 @@ useEffect(()=>{},[]);
 # State variable
 - Whenever state variable update, react triggers a reconciliation cycle (re-renders the component)
 but only updating the state variable
+
+# React Router
+- BrowserRouter - creates list of path
+- What will happen on the specific route
+- npm install react-router-dom
+
+# Creating configuration
+`const appRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <AppLayout />,
+        errorElement: <Error />
+    }
+`
+- Similarly for each routes such as Contact us or About page
+- There are so many routers available on react-router for different functionality
+- BrowserRouter is a recommended way
+
+# Error in Routing
+- Create a separate component for error
+- Create a useRouterError Hook for Errors
+
+`const err = useRouteError();
+<h3>{err.status} {err.statusText}</h3>`
+
+# Passing Configuration
+root.render(<RouterProvider router={appRouter} />); 
+
+# Children Routes
+- To make Header stay intact in all the pages, we need to create children routes
+`children: [
+            {
+                path: "/",
+                element: <Body />,
+            },
+            {
+                path: "/about",
+                element: <About />,
+            },
+            {
+                path: "/contact",
+                element: <Contact />,
+            }
+        ],`
+
+
+# Outlet
+- Outlet will be filled with children according to the path
+- Outlet will be replaced by the components according to the path
+
+# Link to page
+- In React, when routing to a page dont use anchor tag
+- Use Link - a superpower
+- Why not to use anchor tag?
+- It will reload the page every time it routes
+- But Link will not reload the page
+- Link just refreshes the component
+`<Link to="/about">About</Link></li>'
+
+# Single Page Application (SPA)
+- Browser will not reload the page
+- For navigation also, it will just refresh the page
+- we will not have different html for each page
+
+# Types of Routing in Web Application
+- Client Side Routing
+
+- Server Side Routing
+You make network call, and the html page is coming from server
+
 
 
 
