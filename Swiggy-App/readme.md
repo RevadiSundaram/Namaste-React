@@ -215,9 +215,18 @@ root.render(<RouterProvider router={appRouter} />);
 
 # Types of Routing in Web Application
 - Client Side Routing
+All the components are loaded for the first time, it just loads the component
 
 - Server Side Routing
 You make network call, and the html page is coming from server
+
+# Dynamic Routing
+
+
+
+
+
+
 
 
 
