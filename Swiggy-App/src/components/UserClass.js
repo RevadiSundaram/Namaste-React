@@ -14,7 +14,6 @@ class UserClass extends React.Component{
     }
     async componentDidMount(){
         //console.log(this.props.name+" child componentDidMount ")
-
         const data = await fetch("https://api.github.com/users/RevadiSundaram");
         const json = await data.json();
         this.setState ({
@@ -26,6 +25,7 @@ class UserClass extends React.Component{
     render(){
         //console.log(this.props.name+" child render ")
         const {name, location, avatar_url} = this.state.userInfo;
+       
         return(
             <div className="user-card">
                 <img src={avatar_url} ></img>
@@ -37,3 +37,20 @@ class UserClass extends React.Component{
     }
 }
 export default UserClass;
+
+/****
+ * -----Mounting Cycle----
+ * Constructor (dummy)
+ * Render (dummy)
+ * <html loaded> (dummy)
+ * componentDidMount 
+ *      API call
+ *      setState
+ * 
+ * -----Updating Cycle---
+ * Render (api)
+ * <html loaded> (api)
+ * componentDidUpdate
+ * 
+ * 
+ */

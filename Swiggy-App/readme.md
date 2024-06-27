@@ -287,14 +287,29 @@ Commit phase
 - React updates DOM, componentDidMount called
 - Commit phase takes time
 
+Mounting:
+- Showing to the UI
+
 Updating:
 - DOM Maniulation is expensive, so react optimizes and batches render and commit phase
+- React triggers the render once again
+- componentDidUpdate
 
+Unmounting:
+- When the component will disappear from html (as soon as it disappears)
+- componentWillUnmount
 
+# componentDidUpdate
+- After updating DOM
 
+# Use case of componentDidUnmount
+- For eg. if we start the setInterval() in componentDidMount for 1 sec, then it will be calling every 1 sec even if we route to another component
+- To clear up this, we need to write clearInterval() in componentDidUnmount
 
-
-
+# Return Function in useEffect()
+- This is called when unmounting it
+- It will called after we leave the component, moving to another component
+- If we use setInterval in useEffect(), then we have to clean it using clearInterval in return function of useEffect.
 
 
 
