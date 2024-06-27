@@ -206,6 +206,7 @@ root.render(<RouterProvider router={appRouter} />);
 - It will reload the page every time it routes
 - But Link will not reload the page
 - Link just refreshes the component
+- behind the scenes link is using anchor tag
 `<Link to="/about">About</Link></li>'
 
 # Single Page Application (SPA)
@@ -221,6 +222,73 @@ All the components are loaded for the first time, it just loads the component
 You make network call, and the html page is coming from server
 
 # Dynamic Routing
+
+
+
+# Class Based Components
+
+# Diff btw function and Class
+- Functional comp is a function which returns JSX
+- Class comp is a class which extends React.Component, and has render method which returns JSX
+
+# State variable in Class components
+- Loading a class based componets == creating instance of a class
+- whenever we create instance of class then constructor will be called
+- use this.setState to update the state variable
+- this.setState 
+//Never update state variable directly
+    `this.setState({
+        count: this.state.count + 1,
+    })`
+
+# Why do we write super(props) in Class?
+
+
+# Lifecycle of React
+- When the class loads, the constructor is called
+- When class is instanstiated, then constructor is called
+- Whenever constructor is called, then render is called
+- After the component has been mounted (on the page), then componentDidMount is called
+
+# Parent Child Relation
+- If we have the parent also as a class based component then
+- First, the parent's constructor is called
+- the parent's render method is called
+- parent's componentDidMount will be waiting till Child's component loaded completely
+- Child's constructor is called
+- Child's render is called
+- Child's componentDidMount will be called
+- Now Child's component has been loaded completely then Parent's componentDidMount is called
+
+# Usecase of componentDidMount
+- To make API calls
+- First render the component -> Make API call -> Re-render the component
+
+# Parent/Child Relation when multiple children
+- React optimizes it when 2 children, it batches the render phase together and commit phase will batch together
+- first constructor
+- first render
+- second constructor
+- second render
+- first componentDidMount
+- second componentDidMount
+
+# React Lifecycle
+[Lifecycle Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+Two phases
+- Render phase
+- Commit phase
+
+Render phase 
+- constructor, render called
+- Render phase is very fast
+
+Commit phase 
+- React updates DOM, componentDidMount called
+- Commit phase takes time
+
+Updating:
+- DOM Maniulation is expensive, so react optimizes and batches render and commit phase
 
 
 

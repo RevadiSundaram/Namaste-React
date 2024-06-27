@@ -1,19 +1,24 @@
 import {LOGO_URL} from "../utils/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [userDet, setUserDet] = useState("Sign In");
+
     return(
         <div className="header">
-            <div className="icons">
-                <img className="icon" src={LOGO_URL} />
-                <h3>Foodie Treat</h3>
-            </div>
+            <Link to="/">
+                <div className="icons">
+                    <img className="icon" src={LOGO_URL} />
+                    <h3>Swiggy</h3>
+                </div>
+            </Link>
+            
             
             <div className="nav-el">
                 <ul>
-                    <li><i className="fa-solid fa-magnifying-glass"></i> &nbsp; Search </li>
-                    <li><i className="fa-solid fa-circle-info"></i> &nbsp; Help  </li>
+                   <Link to="/contact"><li><i className="fa-solid fa-magnifying-glass"></i> &nbsp; Contact </li></Link> 
+                    <Link to="/about"><li><i className="fa-solid fa-circle-info"></i> &nbsp; About  </li></Link>
                     <button onClick={() => {
                         if(userDet == "Sign In"){
                             setUserDet("Sign Out");

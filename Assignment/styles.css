@@ -6,10 +6,9 @@
 body{
     font-family: "Lato", sans-serif;
     font-weight: 500;
-    background-color: #e9ecef;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #f8edeb;
+    /* display: flex; */
+    min-width: 100%;
     min-height: 100vh;
 }
 .app{
@@ -20,10 +19,12 @@ body{
     display: flex;
     align-items: center;
     gap: 100px;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px 100px;
     background-color: white;
     font-size: 18px;
+    align-self: stretch;
+    min-width: 100%;
 }
 .icons{
     display: flex;
@@ -138,4 +139,8 @@ input{
     font-size: 18px;
     font-weight: 500;
 
+}
+a{
+    text-decoration: none;
+    color: black;
 }

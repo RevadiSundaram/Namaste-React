@@ -11,9 +11,9 @@ export default  Header = () =>{
     // if no depandancy array => useeffect is called on every component render
     // if depandancy array is empty => useeffect is called on initial render and just once
     // if any depandancy => useeffect called only when the depandancy changes
-    useEffect(() =>{
-        console.log("useeffect called");
-    }, [])
+    // useEffect(() =>{
+    //     console.log("useeffect called");
+    // }, [])
 
     return (
         <div className="header">
