@@ -311,6 +311,41 @@ Unmounting:
 - It will called after we leave the component, moving to another component
 - If we use setInterval in useEffect(), then we have to clean it using clearInterval in return function of useEffect.
 
+# Single Responsibility Principle
+- For each component, we should have single responsibility
+- If we are doing more than one thing in a single component, then we have to break the components
+- Good way to maintain the components
+- To maintain modularity
+- Reuseable
+- Maintainable
+- Testable
+
+# Custom Hooks
+- To maintain modularity
+- Reuseable
+- Maintainable
+- Testable
+- Try to start the custom hooks with "use"
+- keep it in util folder
+
+# Optimization
+- Bundler - Bundles are files and make it into one
+- Our app bundles are all code into index.js file in parcel which has more than 2 MB, which is not good
+- If the size is higher, then our app will take lot of time to load
+
+# Lazy Loading
+- Diff names - Chunking, Code Splitting, Dynamic Bundling, on demand loading, dynamic import
+- Break down our apps into smaller bundles
+- Lazy function comes from react library
+- It takes callback function, has import function
+
+# Suspense
+- It is a component, comes from React Library
+
+
+
+
+
 
 
 
