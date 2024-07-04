@@ -108,3 +108,99 @@ Conditional rendering in React refers to the process of delivering elements and 
 
 #  What is the use of `const json = await data.json();` in getRestaurants().
 - it will give the value as a readable json format after the promise is resolved
+
+# What are various ways to add images into our App? Explain with code examples
+[Click Here](https://builtin.com/software-engineering-perspectives/react-js-image)
+
+# What would happen if we do console.log(useState())?
+If we do console.log(useState()), we get an array [undefined, function] where first item in an array is state is undefined and the second item in an array is setState function is bound dispatchSetState
+
+# How will useEffect behave if we don't add a dependency array ?
+If you do not pass a dependency array to the useEffect hook, it will not default to an empty array. Instead, it will run the effect after every render. 
+
+# What is SPA?
+A Single Page Application (SPA) is a web application that loads a single HTML page and dynamically updates the content as the user interacts with the application. a React application that required me to use React Router to build a SPA.
+
+# What is difference between Client Side Routing and Server Side Routing?
+Server-side
+- by clicking on a link, which in turn will request a new page from the server. This is what we call a server-side route. A whole new document is served to the user.
+- Server-side rendering is also better for SEO because it allows search engines to easily crawl and index the content on a website.
+
+Client-side
+- A client-side route happens when the route is handled internally by the JavaScript that is loaded on the page.
+- The whole website or web-application needs to be loaded on the first request. That’s why the initial loading time usually takes longer.
+
+# How do you create Nested Routes react-router-dom cofiguration
+- We can create a Nested Routes inside a react router configuration as follows: first call createBrowserRouter for routing different pages
+
+`const router = createBrowserRouter([
+   {
+      path: "/", // show path for routing
+      element: <Parent />, // show component for particular path
+      errorElement: <Error />, // show error component for path is different
+      children: [ // show children component for routing
+         {
+            path: "/path",
+            element: <Child />
+         }
+      ],
+   }
+])`
+- Now we can create a nested routing for /path using children again as follows:
+`const router = createBrowserRouter([
+   {
+      path: "/",
+      element: <Parent />,
+      errorElement: <Error />,
+      children: [
+         {
+            path: "/path",
+            element: <Child />,
+            children: [ // nested routing for subchild
+               {
+                  path: "child",      // Don't use '/' because then react-router-dom will understand it's the direct path
+                  element: <SubChild />,
+               }
+            ],
+         }
+      ],
+   }
+])`
+
+# Read abt createHashRouter, createMemoryRouter from React Router docs.
+- createHashRouter
+This router is useful if you are unable to configure your web server to direct all traffic to your React Router application. Instead of using normal URLs, it will use the hash (#) portion of the URL to manage the "application URL".
+- createMemoryRouter
+Instead of using the browser's history, a memory router manages its own history stack in memory. It's primarily useful for testing and component development tools like Storybook, but can also be used for running React Router in any non-browser environment.
+
+# What is the order of life cycle method calls in Class Based Components
+
+Following is the order of lifecycle methods calls in Class Based Components:
+- constructor()
+- render ()
+- componentDidMount()
+- componentDidUpdate()
+- componentWillUnmount()
+Refer [React Lifecycle](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+
+# Why do we use componentDidMount?
+- componentDidMount() only runs once after the first render. 
+- componentDidMount() may be called multiple times if the key prop value for the component changes. 
+- componentDidMount method is used for handling all network requests and setting up subscriptions during the mounting phase.
+
+# Why do we use componentWillUnmount? Show with example
+- This method is called just before the component is removed from the DOM. 
+- It allows you to perform any necessary cleanup, such as canceling timers, removing event listeners, or clearing any data structures that were set up during the mounting phase.
+
+#  Why do we use super(props) in constructor?
+- `super(props)` is used to inherit the properties and access variables of the React parent class when we initialize our component. 
+- super() is used inside constructor of a class to derive the parent's all properties inside the class that extended it. 
+- If super() is not used, then Reference Error : Must call super constructor in derived classes before accessing 'this' or returning from derived constructor is thrown in the console. 
+- The main difference between super() and super(props) is the this.props is undefined in child's constructor in super() but this.props contains the passed props if super(props) is used
+
+# Why can't we have the callback function of useEffect async?
+- since useEffect() is an asynchronous, non-blocking function, async callbacks cannot be made directly inside of it.
+- useEffect expects it's callback function to return nothing or return a function (cleanup function that is called when the component is unmounted). 
+- If we make the callback function as async, it will return a promise and the promise will affect the clean-up function from being called.
+
+# 
