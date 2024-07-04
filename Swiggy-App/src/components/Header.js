@@ -19,12 +19,12 @@ export default  Header = () =>{
     // }, [])
 
     return (
-        <div className="header">
+        <div className="flex justify-between bg-pink-50 shadow-md mb-5 px-10">
             <div className="logo">
-                <img src={LOGO_URL} />
+                <img className="w-36" src={LOGO_URL} />
             </div>
-            <div className="nav-items">
-                <ul>
+            <div className="flex items-center">
+                <ul className="flex p-4 gap-5">
                     <li>Online Status : &nbsp;
                         {onlineStatus ? "🟢" : "🔴"}
                     </li>

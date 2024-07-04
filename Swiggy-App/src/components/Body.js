@@ -40,15 +40,15 @@ const Body = () => {
 
     return (listOfRestaurants.length === 0) ? (<Shimmer />) : (
         <div className="body">
-            <div className="filter">
-                <div className="search">
-                    <input type="text" className="search-box" value={searchText}
+            <div className="search m-4 p-4 flex">
+                <div className="m-4 p-4">
+                    <input type="text" className="border border-black" value={searchText}
                         onChange={(e) =>{
                             setSearchText(e.target.value);
                         }}
                     ></input>
                     <button 
-                        className="search-btn"
+                        className="px-4 py-2 bg-green-100 m-4 rounded-md"
                         onClick={() => {
                         //Filter the restaurant cards and update UI
                         //searchText
@@ -63,7 +63,7 @@ const Body = () => {
                     }}
                     >Search</button>
                 </div>
-                <button className="filter-btn" 
+                <button className="search m-4 p-4 bg-blue-400 rounded-lg self-center" 
                     onClick={() => {
                     const filteredList = listOfRestaurants.filter((res) =>  {
                          return res.info.avgRating >= 4.2;
@@ -74,7 +74,7 @@ const Body = () => {
                     Top Rated Restaurants
                 </button>
             </div>
-            <div className="res-cont">
+            <div className="flex flex-wrap justify-center">
                 {
                     filteredRestaurants.map((restaurant) => (
                    <Link key={restaurant.info.id} to={"restaurants/"+restaurant.info.id}> <RestaurantCard resData = {restaurant} /> </Link>

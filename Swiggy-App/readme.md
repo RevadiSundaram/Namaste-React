@@ -342,9 +342,23 @@ Unmounting:
 # Suspense
 - It is a component, comes from React Library
 
+# Adding styles to React
+SASS - writing CSS with super powers
+SCSS - 
+styled components
+Material UI
+Bootstrap
+Chakra UI
+Ant design
+Tailwind CSS
 
+# Post CSS
+- Tailwind CSS uses postCSS behind the scenes
+- tool for transforming CSS with Javascript
+- postcssrc is a way that our projects (parcel) understands tailwind
 
-
+# Pros
+- It is lightweight
 
 
 
