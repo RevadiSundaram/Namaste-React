@@ -360,6 +360,28 @@ Tailwind CSS
 # Pros
 - It is lightweight
 
+# Higher Order Components (HOC)
+- HOC is a function which takes a component enhances that component and returns a component
+- HOC are pure function
+
+# Controlled vs Uncontrolled Components:
+- Controlled - controlled by parents with parent state (relying on its parents to tell what to do)
+- Uncontrolled - controlled by child itself with Child state
+
+
+# React Dev Tools
+- It has UI layer and data layer
+
+# Lifting the state up
+- Sometimes we have to lift the state up, in order to controll the components
+
+# Props Drilling
+- One way data flow (parent to children)
+- 
+
+
+
+
 
 
 
