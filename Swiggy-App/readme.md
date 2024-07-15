@@ -377,11 +377,33 @@ Tailwind CSS
 
 # Props Drilling
 - One way data flow (parent to children)
-- 
+- Passing the data from parent to children on so much levels
+- The problem is passing props
 
+# React Context
+- Avoid props drilling
+- Can access the data anywhere in our application
+- useContext
 
+# Accessing context in class comp
+- Consumer
 
+# context.provider
+- Overriding the default value using comp.Provider
+- We can provide to the whole app or just a small portion
+- We can update the context
+- It will update even in lazy component
+- Wherever we are using useContext, React will rerender
 
+# Context
+- Creating context - createContext
+- use that context - useContext
+- using context in class based comp - .Consumer - takes callback function
+- can use it anytime you want to
+- very flexible
+- modify - .Provider - value will be provided to everywhere
+- tied usercontext in state variable
+- so everywhere data changes
 
 
 

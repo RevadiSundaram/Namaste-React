@@ -1,11 +1,12 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 export default  Header = () =>{
 
-    
+    const {loggedInUser} = useContext(UserContext);
     // let btnName = "Login";
     const [btnName, setBtnName] = useState("Login");
 
@@ -42,7 +43,8 @@ export default  Header = () =>{
                            btnName === "Login" ? setBtnName("Logout") : setBtnName("Login")
                             }}>
                                 {btnName}
-                                </button>
+                    </button>
+                    <li>({loggedInUser})</li>
                 </ul>
             </div>
         </div>
