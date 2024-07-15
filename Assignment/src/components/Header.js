@@ -7,17 +7,17 @@ const Header = () => {
     const [userDet, setUserDet] = useState("Sign In");
     const onlineStatus = useOnlineStatus();
     return(
-        <div className="header">
+        <div className="flex justify-between items-center py-3 px-10">
             <Link to="/">
-                <div className="icons">
-                    <img className="icon" src={LOGO_URL} />
+                <div className="flex gap-1 items-center">
+                    <img className="w-[100px] h-[100px]" src={LOGO_URL} />
                     <h3>Swiggy</h3>
                 </div>
             </Link>
             
             
             <div className="nav-el">
-                <ul>
+                <ul className="flex gap-10 items-center font-medium">
                     
                     <Link to="/grocery"><li>Grocery</li></Link>
                     <Link to="/contact"><li><i className="fa-solid fa-magnifying-glass"></i> &nbsp; Contact </li></Link> 

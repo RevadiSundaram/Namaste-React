@@ -16,11 +16,11 @@ const RestaurantMenu = () =>{
     const {name, avgRating, totalRatingsString, costForTwoMessage, areaName, cuisines, feeDetails, sla} = resInfo?.data.cards[2]?.card?.card?.info;
     const itemCards = resInfo.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards;
     return(
-        
-        <div className="res-menu">
-            <h1>{name}</h1>
-            <div className="det-card">
-                <div className="rat">
+        <main className="bg-white pt-20">
+        <div className="pt-20 bg-[#e76f51] items-center flex flex-col justify-center py-5 px-10 rounded-lg">
+            <h1 className="font-bold text-2xl">{name}</h1>
+            <div className="gap-1">
+                <div className="flex gap-1">
                 <i className="fa-solid fa-star rating"></i>
                     <p>{avgRating}</p>
                     <p>.</p>
@@ -60,6 +60,7 @@ const RestaurantMenu = () =>{
                 
             </div>
         </div>
+        </main>
     )
 }
 export default RestaurantMenu;

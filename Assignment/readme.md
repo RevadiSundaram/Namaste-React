@@ -203,4 +203,69 @@ Refer [React Lifecycle](https://projects.wojtekmaj.pl/react-lifecycle-methods-di
 - useEffect expects it's callback function to return nothing or return a function (cleanup function that is called when the component is unmounted). 
 - If we make the callback function as async, it will return a promise and the promise will affect the clean-up function from being called.
 
-# 
+# When and why do we need lazy()?
+- React.lazy() or lazy loading is used to dynamically import components or a part of code must get loaded when it is required.
+
+# Benefits
+- Improved initial load time: Lazy loading can improve the initial load time of your application by reducing the amount of code that needs to be downloaded and parsed when the page first loads.
+- Reduced memory usage: Lazy loading can reduce the amount of memory that is used by your application by deferring the loading of resources until they are needed.
+- Improved user experience: Lazy loading can improve the user experience by making your application feel more responsive.
+- When to use lazy loading: For example, if a web page has an image that the user has to scroll down to see, you can display a placeholder and lazy load the full image only when the user arrives to its location
+
+# What is suspense?
+- React suspense is a built-in React component which lets you temporarily render a fallback UI while its children are still loading. 
+- Suspense is a component provided by React that lets you “wait” for the dynamic import to load, showing a fallback UI in the meantime (in this case, a simple “Loading…” message).
+
+```python
+const MyComponent = React.lazy(() => import('./MyComponent'));
+<Suspense fallback={<div>Loading...</div>}>
+  <MyComponent />
+</Suspense>
+```
+
+# Why we got this error: A component was suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix this, updates that suspend should be wrapped with start transition? How does suspense fix this error?
+
+- This error is thrown as Exception by React when the promise to dynamically import the lazy component is not yet resolved and the Component is expected to render in the meantime. 
+- If only the dynamic import is done and there is no <Suspense /> component then this error is shown.
+- React expects a Suspense boundary to be in place for showing a fallback prop until the promise is getting resolved. 
+- If showing the shimmer (loading indicator) is not desirable in some situations, then startTransistion API can used to show the old UI while new UI is being prepared.
+
+#  Advantages and disadvantages of using this code splitting pattern?
+- Code splitting is a powerful optimization technique that offers numerous benefits in terms of performance, resource utilization, and user experience. 
+- By reducing the initial bundle size, code splitting enables faster page loads, smoother interactions, and more efficient resource management.
+Pros:
+- `Faster initial load time`: By only loading the necessary code for the initial view, code splitting can significantly improve the time it takes for the page to load. This can be especially helpful on slower network connections or devices.
+- `Improved user experience`: Code splitting can allow users to interact with the application sooner, and non-essential code can be loaded asynchronously in the background to improve the overall responsiveness of the application.
+- `Improved performance`: Code splitting can reduce the amount of JavaScript that needs to be parsed and executed.
+Cons:
+- Increased complexity in development and testing processes
+- More network requests that can affect performance
+- Additional code and dependencies that can increase the bundle size
+
+# When do we and why do we need suspense?
+- Suspense is a React feature that allows developers to display a temporary UI while waiting for data to load. 
+- It's best used when you want to display a fallback while waiting for something to load, such as when waiting for data to be fetched from an API after the initial page load.
+- Suspense is often used in conjunction with React's dynamic import mechanism called lazy(). 
+- Lazy loading refers to the requirement that a component or portion of code will load only when it's needed. This functionality helps to minimize your application's loading speed and lower the initial bundle size.
+
+# Explore all the ways of writing css
+- Styled component
+- Inline CSS
+- External CSS
+- Frameworks: Tailwind, Bootstrap, chakra UI, material UI
+
+# How do we configure tailwind?
+- npm install -D tailwindcss postcss, npx tailwindcss init
+- create .postcssrc file
+- add this in tailwind.config.js file  ("./src/**/*.{html,js,ts,jsx,tsx}",)
+- add this in css file => @tailwind base; @tailwind components; @tailwind utilities;
+
+# In tailwind.config.js, what does all the keys mean (content, theme, extend, plugins)?
+content - for which type of file we are using tailwind
+theme and extend - While Tailwind's default theme is comprehensive, there may be instances where you need to add or override certain values. Tailwind provides an extend option in the theme configuration for this purpose. 
+plugins - Plugins let you register new styles for Tailwind to inject into the user’s stylesheet using JavaScript instead of CSS
+
+# Why do we have .postcssrc file?
+- Tailwind CSS uses postCSS behind the scenes
+- tool for transforming CSS with Javascript
+- postcssrc is a way that our projects (parcel) understands tailwind
