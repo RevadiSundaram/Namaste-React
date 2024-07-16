@@ -405,6 +405,43 @@ Tailwind CSS
 - tied usercontext in state variable
 - so everywhere data changes
 
+# Redux
+- Redux is not mandatory
+- Very large scale application uses Redux
+- use it only required
+- Redux offers easy debugging
+- Predictable state container for JS apps
+
+# Libraries
+- React Toolkit - latest way to learn Redux
+
+# Redux Toolkit (RTK)
+It solves three problems
+- Redux store is very complicated
+- Have to add lots of packages
+- Redux requires too much boilerplate code
+
+# Redux Store
+- very big js object, kept in a golbal central place
+- any comp can access it
+- read and write data into that store
+
+# Slice
+- logical partition
+- Eg: cart slice, userInfo slice
+
+# Dispatch (Action)
+- clicking add button it dispatches an action
+- calls the function, function modifies the cart
+
+# Writing data in Redux
+- When clicking add button, it dispatches action which calls the reducer function which updates the  clice of the redux store
+
+# Reading Data in Redux
+- We use selector to read the data from the store, the selector will update the cart in header comp
+- Sector == Subscribe to the store == to be in SYNC
+
+
 
 
 /*
