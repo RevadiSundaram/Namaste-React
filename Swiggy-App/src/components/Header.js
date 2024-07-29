@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 export default  Header = () =>{
 
@@ -18,6 +19,10 @@ export default  Header = () =>{
     // useEffect(() =>{
     //     console.log("useeffect called");
     // }, [])
+
+    //subscribing to the store
+    const cartItems = useSelector((store) => store.cart.items);
+    console.log(cartItems);
 
     return (
         <div className="flex justify-between bg-pink-50 shadow-md mb-5 px-10">
@@ -36,7 +41,7 @@ export default  Header = () =>{
                     <li>
                         <Link to="/contact">Contact</Link></li>
                     <li><Link to="/grocery">Grocery</Link></li>
-                    <li>Cart</li>
+                    <li className="font-bold"><Link to="/cart">Cart - {cartItems.length} items</Link></li>
                     <button 
                         className="login" 
                         onClick={() => {

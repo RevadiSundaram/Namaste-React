@@ -441,6 +441,41 @@ It solves three problems
 - We use selector to read the data from the store, the selector will update the cart in header comp
 - Sector == Subscribe to the store == to be in SYNC
 
+# Redux Toolkit
+- npm install @reduxjs/toolkit, npm install react-redux
+- Build our store
+- Connect our store to our app
+- Slice (Cart slice)
+- Dispatch (Action)
+- Reducer
+- Selector
+- current(state) gives current state data - for debugging
+- RTK says either mutate the existing state or return a new state
+
+
+# Diff btw 
+onClick = {handleItem}
+onClick = {() => handleItem(item)}
+onClick = {handleItem(item)}
+
+# Important Interview Questions
+- Only subscribe to the specific portion of the store, that we want - It is efficient, performance optimization
+- In store, we have `reducer`
+- In slice, we have multiple small `reducers`
+- While exporting, we are exporting one `reducer`
+
+# Redux vs Toolkit
+- Vanilla redux - we shouldn't mutate the state, returning was mandatory
+- Toolkit -  we have to mutate the state, returning was not mandatory
+- Toolkit uses Immer library to find the diff btw original state and mutated state and gives us back the new state - Immutable state
+- Redux uses Immer BTS
+
+# Middleware, Thunks
+
+
+
+
+
 
 
 
