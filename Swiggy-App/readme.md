@@ -471,6 +471,75 @@ onClick = {handleItem(item)}
 - Redux uses Immer BTS
 
 # Middleware, Thunks
+ 
+
+# TEST
+- Concerned about only Developer Testing
+
+# Types of Testing
+- Manual Testing
+- Writing Test case - which tests our application automatically
+
+# 3 Types of Testing (developer)
+- Unit Testing
+- Integration Testing
+- End to End Testing (E2E)
+
+# Unit Testing
+- Test react comp in isolation
+
+# Integration Testing
+- Multiple comp talking to each other, flow of it
+
+# End to End Testing
+- Testing the application as soon as the user lands on the website, to the user leaves the website
+
+# Testing Library
+- DOM Testing Library
+- React Testing Library uses Jest - Delightful JS Testing framework
+
+# Setting up testing
+- npm i -D @testing-library/react
+- npm i -D jest
+- npm install --save-dev babel-jest @babel/core @babel/preset-env
+- Configured babel in babel.config.js
+- To disable Babel transpilation in Parcel, .parcelrc
+- npm run test
+- npx jest --init
+- npm install --save-dev jest-environment-jsdom
+- @babel/preset-react - to make jsx working inside our app
+- Include @babel/preset-react in babel.config.js
+- npm i -D @testing-library/jest-dom 
+
+# Folder/File structure
+- __tests__ folder = dunder method
+- *.test.js
+- *.spec.js
+
+# Test whether the component is loaded or not
+- can use test or it
+"
+("test" or "it")("Should load contact us componenet" , () => {
+    render(<Contact />);
+    const heading = screen.getByRole("heading");
+    //Assertion
+    expect(heading).toBeInTheDocument();
+});
+`
+
+# Selecting Elements in Testing
+- getByRole - heading
+- getByPlaceholderText - placeholder in input
+- getByText - text in screen
+- getBy - only one result
+- getAllBy - all the result
+- when we console this we get React Element, JSX
+
+# Grouping Test cases
+- describe
+
+
+
 
 
 
