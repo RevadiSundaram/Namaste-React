@@ -538,7 +538,15 @@ onClick = {handleItem(item)}
 # Grouping Test cases
 - describe
 
+# Testing with Redux
+- we have to wrap inside our render method with <Provider store>
+- or it will throw error
 
+# Testing with Router
+- wrap it in <BrowserRouter>
+
+# Reject
+- /Cart/
 
 
 
