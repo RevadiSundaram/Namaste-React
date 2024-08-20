@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/RevadiSundaram/Namaste-React/issues"
   },
-  "homepage": "https://github.com/RevadiSundaram/Namaste-React/tree/main#readme",
+  "homepage": ".",
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.2",
