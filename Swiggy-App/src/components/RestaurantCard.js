@@ -2,6 +2,7 @@ import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) =>{
     const {resData} = props;
+    console.log(resData);
 
     const {cloudinaryImageId, name, avgRating, cuisines,  costForTwo} = resData?.info;
     const {deliveryTime} = resData?.info.sla;
@@ -30,7 +31,7 @@ export const withOfferLabel = (RestaurantCard) => {
         return (
             
             <div>
-                <label className="absolute bg-black text-xs text-white ml-8 mt-4 p-1 rounded-md">{offer.header} {offer.subHeader}</label>
+                <label for="offer" className="absolute bg-black text-xs text-white ml-8 mt-4 p-1 rounded-md">{offer.header} {offer.subHeader}</label>
                 <RestaurantCard {...props} />
                 {console.log()}
             </div>

@@ -54,3 +54,9 @@ Keep React before your App.js
 - React will only work in root id
 - React can work in existing applications
 - React can work in the small portions of the page (by giving cdn links)
+
+# React.StrictMode why rendering twice
+- React.StrictMode will render twice in dev env
+- The same will render once in prod env
+- Bcoz in dev env, just to make sure the reconcilliation algorithm working, it is made like that
+- just to be sure it is updating properly (internally)

@@ -548,7 +548,8 @@ onClick = {handleItem(item)}
 # Reject
 - /Cart/
 
-
+# Integration Testing
+- "watch-test":"jest --watch" = in package.json to avoid running commands again and again
 
 
 
