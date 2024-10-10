@@ -31,7 +31,7 @@ export const withOfferLabel = (RestaurantCard) => {
         return (
             
             <div>
-                <label for="offer" className="absolute bg-black text-xs text-white ml-8 mt-4 p-1 rounded-md">{offer.header} {offer.subHeader}</label>
+                <label htmlFor="offer" className="absolute bg-black text-xs text-white ml-8 mt-4 p-1 rounded-md">{offer.header} {offer.subHeader}</label>
                 <RestaurantCard {...props} />
                 {console.log()}
             </div>
