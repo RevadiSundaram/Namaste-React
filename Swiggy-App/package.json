@@ -44,6 +44,6 @@
     "react-router-dom": "^6.23.1"
   },
   "homepage": "/",
-
-  "private": true
+  "private": true,
+  "publicUrl": "./"
 }
